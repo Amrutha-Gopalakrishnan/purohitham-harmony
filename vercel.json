@@ -2,13 +2,16 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/client",
   "devCommand": "npm run dev",
+  "functions": {
+    "api/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  },
   "rewrites": [
     {
       "source": "/(.*)",
       "destination": "/api/index"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
